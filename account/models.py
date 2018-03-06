@@ -1,9 +1,14 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
+from goals import views
+
+# from goals import models
+
 
 
 class UserProfileModel(models.Model):
+    # goal = models.ForeignKey(Goal, on_delete=models.CASCADE)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     age = models.PositiveIntegerField(blank=True, null=True)
     height = models.PositiveIntegerField(blank=True, null=True)
