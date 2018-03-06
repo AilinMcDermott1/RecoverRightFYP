@@ -1,10 +1,14 @@
-{#{% extends 'base.html' %}#}
+{% extends 'base.html' %}
 
 {% block head %}
     <title>Profile</title>
 {% endblock %}
 
 {% block body %}
-    {{ user }}
-    {{ user.age }}
+    <div class="container">
+       <p>Username: {{ user }}</p>
+        <p>Age: {{ user.userprofilemodel.age }}</p>
+        <p>Height: {{ user.userprofilemodel.height }} CM </p>
+        <p>Weight: {{ user.userprofilemodel.weight }} KG </p>
+    </div>
 {% endblock %}

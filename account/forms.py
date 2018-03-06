@@ -1,7 +1,9 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UsernameField
+from django.contrib.auth.forms import AuthenticationForm, UsernameField, UserChangeForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from account.models import UserProfileModel
+
 
 
 class RegisterUserForm(forms.ModelForm):
@@ -25,8 +27,22 @@ class RegisterUserForm(forms.ModelForm):
             return cd['password2']
 
 
+
 class LoginForm(AuthenticationForm):
     username = UsernameField(
         widget=forms.TextInput(attrs={'class': 'input', 'autofocus': True, 'placeholder': 'username'})
     )
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': 'password'}))
+
+
+class EditProfileForm(UserChangeForm):
+    template_name='/something/else'
+
+    class Meta:
+        model = User
+        fields = (
+            'email',
+            'first_name',
+            'last_name',
+            'password'
+        )

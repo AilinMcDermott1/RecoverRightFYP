@@ -1,14 +1,11 @@
 {#{% extends 'base.html' %}#}
-{% block title %}
-    Register
-{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="columns is-mobile">
             <div class="column is-half is-offset-one-quarter">
                 <div class="content"><h2>Register</h2></div>
-                <form action="{% url 'register' %}" method="post">
+                <form action="{% url 'account:register' %}" method="post">
                     {% csrf_token %}
                     {% for non_field_error in form.non_field_errors %}
                         <p class="help is-danger">{{ non_field_error }}</p>
@@ -25,6 +22,10 @@
                     <input type="submit" value="SIGN UP" class="button is-primary">
                 </form>
             </div>
+
+        <div class="panel-footer">
+            Already have an account?<a href="{% url 'account:login' %}">Click here</a> to login.
+        </div>
         </div>
     </div>
 {% endblock %}
