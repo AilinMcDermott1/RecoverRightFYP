@@ -1,0 +1,14 @@
+{#{% extends 'base.html' %}#}
+
+{% block content%}
+    <h1>Goals List</h1>
+    <div class="goals">
+    {% for goal in goals %}
+        <div class="goal">
+            <h2><a href="{% url 'goals:goal_detail' slug=goal.slug %}">{{ goal.title }}</a></h2>
+            <p>{{ goal.snippet }}</p>
+            <p>{{ goal.start_date }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

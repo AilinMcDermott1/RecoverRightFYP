@@ -1,0 +1,35 @@
+{#{% extends 'base.html' %}#}
+
+{% block content %}
+  <h2>Nutritionix API</h2>
+
+  <form method="get">
+      {% csrf_token %}
+      {{ form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+
+{#  {% if search_result %}#}
+{#    <hr>#}
+{#    {% if search_result.success %}#}
+{#      {% for result in search_result.results %}#}
+{#        <h3>{{ result.food }}</h3>#}
+{#        {% for branded in result.branded %}#}
+{#          <h4>{{ branded.branded }}</h4>#}
+{#          <ul>#}
+{#            {% for entry in branded.entries %}#}
+{#              {% for self in entry.selfs %}#}
+{#                {% for nf_calories in self.nf_calories %}#}
+{#                  <li>{{ nf_calories }}</li>#}
+{#                {% endfor %}#}
+{#              {% endfor %}#}
+{#            {% endfor %}#}
+{#          </ul>#}
+{#        {% endfor %}#}
+{#      {% endfor %}#}
+{#    {% else %}#}
+{#      <p><em>{{ search_result.message }}</em></p>#}
+{#    {% endif %}#}
+{#  {% endif %}#}
+{##}
+{% endblock %}
