@@ -7,7 +7,8 @@ url = "https://trackapi.nutritionix.com/v2/search/instant?"
 
 body = {
   "query": "query",
-  'query': "apple",
+  'query': food,
+
 }
 
 headers = {
