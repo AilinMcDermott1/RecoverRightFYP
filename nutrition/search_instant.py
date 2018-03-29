@@ -8,7 +8,7 @@ url = "https://trackapi.nutritionix.com/v2/search/instant?"
 
 body = {
 
-  'query': food,
+  'query': '1 cup of chicken soup',
 
 }
 
