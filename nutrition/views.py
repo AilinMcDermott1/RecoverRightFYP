@@ -2,7 +2,7 @@ from django.shortcuts import render
 import requests
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import NutritionForm
+from .forms import NutritionForm, ExerciseForm
 
 def nutritionix(request):
     search_result = {}
@@ -15,13 +15,13 @@ def nutritionix(request):
     return render(request, 'nutrition/nutrition.html', {'form': form, 'search_results': search_result})
 
 
-# def naturalnutrients(request):
-#     results = {}
-#     if 'query' in request.POST:
-#         form = NaturalNutritionForm(request.POST)
-#         if form.is_valid():
-#             results = form.search()
-#     else:
-#         form = NaturalNutritionForm()
-#     return render(request, 'nutrition/nutrition.html', {'form': form, 'results': results})
+def exercise(request):
+    search_result2 = {}
+    if 'exercise' in request.POST:
+        form = ExerciseForm(request.POST)
+        if form.is_valid():
+            search_result2 = form.search2()
+    else:
+            form = ExerciseForm()
+    return render(request, 'nutrition/exercise.html', {'form': form, 'search_results2': search_result2})
 

@@ -35,3 +35,30 @@ class NutritionForm(forms.Form):
 
 
 
+class ExerciseForm(forms.Form):
+    exercise = forms.CharField(max_length=1000000)
+
+    def search2(self):
+        exercise = self.cleaned_data['exercise']
+
+        headers = {
+            'x-app-id': "ff0ccea8",
+            'x-app-key': "605660a17994344157a78f518a111eda",
+            'Content-Type': "application/x-www-form-urlencoded",
+        }
+
+        url = "https://trackapi.nutritionix.com/v2/natural/exercise"
+        body = {
+            'query': exercise
+        }
+
+
+
+        response = requests.request("POST", url, data=body, headers=headers)
+        data = response.json()
+
+        print ('exercise name: ', data['exercises'][0]['user_input'])
+        print ('exercise duration: ', data['exercises'][0]['duration_min'])
+        print ('calories burned: ', data['exercises'][0]['nf_calories'])
+
+
