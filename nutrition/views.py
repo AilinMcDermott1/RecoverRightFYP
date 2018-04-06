@@ -3,6 +3,7 @@ import requests
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import NutritionForm, ExerciseForm
+import subprocess as sp
 
 def nutritionix(request):
     search_result = {}
@@ -17,6 +18,7 @@ def nutritionix(request):
 
 def exercise(request):
     search_result2 = {}
+
     if 'exercise' in request.POST:
         form = ExerciseForm(request.POST)
         if form.is_valid():

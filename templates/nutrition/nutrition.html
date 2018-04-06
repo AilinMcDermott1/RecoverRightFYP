@@ -1,0 +1,22 @@
+{#{% extends 'base.html' %}#}
+
+{% block content %}
+  <h2>Nutritionix API</h2>
+
+  <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+    <button type="submit">Search Food info</button>
+  </form>
+
+    {% block body %}
+    <div class="container">
+        <p>Food name:  {{ search_results.food_name }}</p>
+        <p>Calories:  {{ search_results.nf_calories }}</p>
+        <p>Protein:  {{ search_results.nf_protein }}</p>
+        <p>Fats:  {{ search_results.nf_total_fat }}</p>
+    </div>
+{% endblock %}
+
+
+{% endblock %}
