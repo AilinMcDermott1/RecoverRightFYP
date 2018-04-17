@@ -16,10 +16,9 @@ from urllib import request
 #     return render(request, 'goals/goal_list.html', { 'goals': goals })
 
 
-def goal_detail(request, slug):
+def goal_detail(request, title):
     # return HttpResponse(slug)
-    goal = Goal.objects.get(slug=slug)
-    # form.instance.goal = Goal.objects.get(slug=self.kwargs['slug'])
+    goal = Goal.objects.get(title)
     return render(request, 'goals/goal_detail.html', { 'goal': goal })
 
 @login_required
