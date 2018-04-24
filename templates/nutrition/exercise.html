@@ -1,18 +1,23 @@
-{#{% extends 'base.html' %}#}
+{% extends 'base.html' %}
 
-{% block content %}
+{% block body %}
+    <div class="container">
+
   <h2>Exercise API</h2>
 
   <form action="" method="post">
       {% csrf_token %}
       {{ form.as_p }}
-    <button type="submit">Search Exercise info</button>
+{#    <button type="submit">Search Exercise info</button>#}
+      <button type="submit" class="btn btn-success">Search Exercise</button>
+      <br>
+
   </form>
     {% if output %}<h3>{{ output }}</h3>{% endif %}
     {% if exit_code %}<h3>Your command returned an error: {{ error_msg }}</h3>{% endif %}
 
-    {% block body %}
-    <div class="container">
+{#    {% block body %}#}
+<br>
         <p>Exercise name:  {{ search_results2.user_input }}</p>
         <p>Exercise duration:  {{ search_results2.duration_min }}</p>
         <p>Calories burned:  {{ search_results2.nf_calories }}</p>
@@ -22,4 +27,4 @@
 
 
 
-{% endblock %}
+{#{% endblock %}#}

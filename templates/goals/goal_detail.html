@@ -1,11 +1,27 @@
-{% extends 'base.html' %}
+html>
+<head>
+<meta charset="UTF-8">
+<title>Goals</title>
+</head>
+<body>
 
-{% block content %}
-<div class="goal_detail">
-    <div class="goal">
-        <h2>Title: {{ goal.title }}</h2>
-        <p>Body: {{ goal.body }}</p>
-        <p>Date: {{ goal.date }}</p>
-    </div>
-</div>
-{% endblock %
+
+
+<h1>{{ goal.title }}</h1>
+
+
+<p>Genre: {{ goal.body }}</p>
+
+<p>User: {{ goal.user }}</p>
+
+<p>Created: {{ goal.created_data }}</p>
+
+Go back to the <a href="/goals/goal_list/">list of goals </a><br><br>
+
+<br><br>
+
+{% if request.user.is_authenticated and request.user.username == creator %}
+<a href="/goals/{{ goal.title }}/delete/">Delete this goal </a>
+{% endif %}
+</body>
+</html>

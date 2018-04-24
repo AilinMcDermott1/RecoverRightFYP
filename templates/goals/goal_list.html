@@ -1,14 +1,20 @@
-{#{% extends 'base.html' %}#}
-
-{% block content%}
+{% extends 'base.html' %}
+{% block body%}
+    <div class="container">
     <h1>Goals List</h1>
     <div class="goals">
     {% for goal in goals %}
         <div class="goal">
-            <h2><a href="{% url 'goals:goal_detail' slug=goal.slug %}">{{ goal.title }}</a></h2>
-            <p>{{ goal.snippet }}</p>
-            <p>{{ goal.start_date }}</p>
+            <h2><a href="/goals/{{ goal.id }}/delete/">{{ goal.title }}</a></h2>
+            <p>{{ goal.goal.title }}</p>
+            <p>{{ goal.body }}</p>
+            <p>{{ goal.created_data }}</p>
+{#            <p>{{ goal.user }}</p>#}
+
         </div>
     {% endfor %}
     </div>
 {% endblock %}
+
+
+{#                    <li><a href="{% url 'goals:goal_create' %}">Add Goal</a></li>#}
