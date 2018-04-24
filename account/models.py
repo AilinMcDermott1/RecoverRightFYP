@@ -8,9 +8,9 @@ from goals import views
 
 
 class UserProfileModel(models.Model):
-    # goal = models.ForeignKey(Goal, on_delete=models.CASCADE)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     age = models.PositiveIntegerField(blank=True, null=True)
+    email = models.EmailField(max_length=254, null=True, blank=True, unique=True)
     height = models.PositiveIntegerField(blank=True, null=True)
     weight = models.PositiveIntegerField(blank=True, null=True)
 
