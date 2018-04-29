@@ -28,12 +28,6 @@ class NutritionForm(forms.Form):
         data = response.json()
 
         return data['foods'][0]
-        # print ('food name: ', data['foods'][0]['food_name'])
-        # print ('food calories: ', data['foods'][0]['nf_calories'])
-        # print ('food protein: ', data['foods'][0]['nf_protein'])
-        # print ('food fats: ', data['foods'][0]['nf_total_fat'])
-        # print(response.json())
-
 
 
 class ExerciseForm(forms.Form):
@@ -53,14 +47,8 @@ class ExerciseForm(forms.Form):
             'query': exercise
         }
 
-
-
         response = requests.request("POST", url, data=body, headers=headers)
         data = response.json()
 
         return data['exercises'][0]
-        # print ('exercise name: ', data['exercises'][0]['user_input'])
-        # print ('exercise duration: ', data['exercises'][0]['duration_min'])
-        # print ('calories burned: ', data['exercises'][0]['nf_calories'])
-
 
