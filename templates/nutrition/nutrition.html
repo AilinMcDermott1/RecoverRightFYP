@@ -2,18 +2,20 @@
 
 {% block body %}
     <div class="container">
+{#    <p>Simply enter the food or meal that you have just eaten or are preparing.</p>#}
+{#        <p><strong>EXAMPLE: </strong> Type in "Apple" to get the nutritional information for an apple</p>#}
+{#        <strong>OR</strong>#}
+{#        <p>Enter information abount what you are eating, like: For breakfast I had 100g of porridge. </p>#}
 
-  <h2>Nutritionix API</h2>
+  <h2>Nutrition Information Search</h2>
 
   <form action="" method="post">
       {% csrf_token %}
       {{ form.as_p }}
-{#    <button type="submit">Search Food info</button>#}
       <button type="submit" class="btn btn-success">Search Nutrition</button>
 
   </form>
 
-{#    {% block body %}#}
         <br>
         <p>Food name:  {{ search_results.food_name }}</p>
         <p>Calories:  {{ search_results.nf_calories }}</p>
@@ -21,10 +23,6 @@
         <p>Fats:  {{ search_results.nf_total_fat }} g</p>
         <p>Of which saturated fats: {{ search_results.nf_saturated_fat}} g</p>
         <p>Weight:  {{ search_results.serving_weight_grams }} grams</p>
-{#        <p>Time consumed: {{ search_results.consumed_at }}</p>#}
 
     </div>
 {% endblock %}
-
-
-{#{% endblock %}#}

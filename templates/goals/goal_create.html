@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="container">
-{#    <div class="create-goal">#}
+    <div class="create-goal">
         <h2>Create a New Goal</h2>
         <form class="site-form" action="{% url 'goals:goal_create' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -12,3 +12,107 @@
         </form>
     </div>
 {% endblock %}
+
+{#<!DOCTYPE html>#}
+{#<html>#}
+{##}
+{#<head>#}
+{#    <meta charset="utf-8">#}
+{#    <meta http-equiv="X-UA-Compatible" content="IE=edge">#}
+{#    <title>FitnessTracker</title>#}
+{#    <meta name="description" content="">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1">#}
+{#    <meta name="robots" content="all,follow">#}
+{#    <!-- Load Access to Django Static Files -->#}
+{#    {% load static %}#}
+{#    <!-- Bootstrap CSS-->#}
+{#    <link rel="stylesheet" href="{% static 'style/css/bootstrap.min.css' %}">#}
+{#    <!-- Font Awesome CSS-->#}
+{#    <link rel="stylesheet" href="{% static 'style/css/font-awesome.min.css' %}">#}
+{#    <!-- Custom Font Icons CSS-->#}
+{#    <link rel="stylesheet" href="{% static 'style/css/font.css' %}">#}
+{#    <!-- Google fonts - Muli-->#}
+{#    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">#}
+{#    <!-- theme stylesheet-->#}
+{#    <link rel="stylesheet" href="{% static 'style/css/style.red.css' %}" id="theme-stylesheet">#}
+{#    <!-- Custom stylesheet - for your changes-->#}
+{#    <link rel="stylesheet" href="{% static 'style/css/custom.css' %}">#}
+{#</head>#}
+{##}
+{#<body>#}
+{#    <header class="header">#}
+{#        <nav class="navbar navbar-expand-lg">#}
+{#            <div class="search-panel">#}
+{#                <div class="search-inner d-flex align-items-center justify-content-center">#}
+{#                    <div class="close-btn">Close <i class="fa fa-close"></i></div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="container-fluid d-flex align-items-center justify-content-between ">#}
+{#                <div class="navbar-header">#}
+{#                    <a href="/dashboard" class="navbar-brand">#}
+{#                        <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">RecoverRight</strong></div>#}
+{#                        <div class="brand-text brand-sm"><strong class="text-primary">RR</strong></div>#}
+{#                    </a>#}
+{#                    <button class="sidebar-toggle"><i class="fa fa-long-arrow-left"></i></button>#}
+{#                </div>#}
+{#            </div>#}
+{#        </nav>#}
+{#    </header>#}
+{#    <div class="d-flex align-items-stretch ">#}
+{#        <nav id="sidebar">#}
+{#            <div class="sidebar-header d-flex align-items-center ">#}
+{#            </div><span class="heading">Menu</span>#}
+{#        </nav>#}
+{#        <div class="page-content ">#}
+{#            <div class="page-header">#}
+{#                <div class="container-fluid">#}
+{#                    <h2 class="h5 no-margin-bottom">Add Goal</h2>#}
+{#                </div>#}
+{#            </div>#}
+{#            <section class="no-padding-bottom">#}
+{#                <div class="container-fluid">#}
+{#                    <div class="row">#}
+{#                        <div class="col-lg-12">#}
+{#                            <form id="workout-form" action="/workout" method="POST">#}
+{#                            <form class="site-form" action="{% url 'goals:goal_create' %}" method="post" enctype="multipart/form-data">#}
+{#                                {% csrf_token %}#}
+{#                                <!-- Workout Errors -->#}
+{#                                {% if messages %} {% for message in messages %} {% if message.tags == "workout error" %}#}
+{#                                <div class="alert alert-danger alert-dismissable" role="alert">#}
+{#                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>#}
+{#                                    <strong>Error!</strong> {{ message }}#}
+{#                                </div>#}
+{#                                {% endif %} {% endfor %} {% endif %}#}
+{#                                <!-- Workout Name -->#}
+{#                                <div class="form-group">#}
+{#                                    <input id="name" type="text" name="name" required class="input-material form-control-lg" placeholder="Name">#}
+{#                                </div>#}
+{#                                <!-- Add Workout Button -->#}
+{#                                <input id="add" type="submit" value="Add" class="btn btn-primary btn-lg">#}
+{#                            </form>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </section>#}
+{#            <footer class="footer fixed-bottom no-margin-bottom">#}
+{#                <div class="footer__block block no-margin-bottom">#}
+{#                    <div class="container-fluid text-center">#}
+{#                        <p class="no-margin-bottom">2017 &copy; <a href="http://sasquat.ch" target="_blank" class="sasquatch-footer-link">Sasquat.ch</a></p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </footer>#}
+{#        </div>#}
+{#    </div>#}
+{#    <!-- Javascript files-->#}
+{#    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">#}
+{#    </script>#}
+{#    <script src="{% static 'workout/javascript/bootstrap.min.js' %}"></script>#}
+{#    <script src="{% static 'workout/javascript/jquery.cookie.js' %}">#}
+{#    </script>#}
+{#    <!-- <script src="{% static 'workout/javascript/Chart.min.js' %}"></script> -->#}
+{#    <script src="{% static 'workout/javascript/front.js' %}"></script>#}
+{#</body>#}
+{##}
+{#</html>#}
+

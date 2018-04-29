@@ -1,0 +1,285 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    {% block body %}
+
+        <h2>Nutrition & Fitness Tips</h2>
+        <p> RecoverRight is a fitness based application with added emphasis on Nutrition</p>
+        <p>The point of this site is to provide users with tips/tricks on how to best recover/prepare for matches or exercise.</p>
+        <p>Users can use the <strong>Nutrition</strong> and <strong>Exercise</strong> pages to get quick, accurate
+        information about the food they are eating and the exercises they are doing.</p>
+        <p>Fell free to also add personal goals to your account.
+        These goals act as a visual reminder of the targets that <strong>YOU</strong> have set youself.</p>
+        {#        <p>Here I am going to give a brief overview on how to use the application properly, in order to get the best out of it.</p>#}
+        <br>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Nutrition Benefits</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        The core benefits of proper nutrition are:
+                        <br>
+                        <strong>Performance</strong>
+                        <br>
+                        - Better quality results in the long run.
+                        <br>
+                        - Increased Performances
+                        <br>
+
+                        <strong>Recovery</strong>
+                        <br>
+                        - Fewer injuries
+                        <br>
+                        - Can train harder
+                        <br>
+                        - Get increased benefits from training
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Food Quantity</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        3 main Macronutrients (sources of calories):
+                        <br>
+                        <br>
+                        <strong>Protein</strong>
+                        <br>
+                        - Aid recovery and build muscle tissue
+                        <br>
+                        - Chicken, Beef, Pork, Eggs, Natural Yogurt
+                        <br>
+                        - <strong>Body can only obsurb 30grams of protein per meal</strong>
+                        <br>
+                        ---Dont think that by eating more protein you'll get better benefits.
+                            <br>
+                        ---For protein value, 1 chicken breast is better then 2!!
+                        <br>
+                        - Aim for <strong>4</strong> fist sized portions per day.
+                        <br>
+                        <br>
+                        <strong>Fat</strong>
+                        <br>
+                        - Small amount needed fot vitamins absorbtion and energy.
+                        <br>
+                        - Nuts, seeds, Olive oil, Egg yokes
+                        <br>
+                        <br>
+                        <strong>Carbohydrates</strong>
+                        <br>
+                        - Our main energy source
+                        <br>
+                        - Rice, Potatos, Sweet Potatoes, Pasts, Bread, Oats, Fruit
+                        <br>
+                        - Two fist sized portions per day (Increase/Decrease depending on Training load)
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Food Quality</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        - Aim for a wide range of fruits and vegeatables.
+                        <br>
+                        - <strong>3</strong> portions per day is what you should be aiming for.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Food Timing</a>
+                    </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        The timing of our meals are vital to getting the best out of ourselves.
+                        <br>
+                        - <strong>BEFORE Training</strong>
+                        <br>
+                        - Aim to fuel the body but avoid the feeling of fullness during the session.
+                        <br>
+                        -Pre-exercise meals should contain:
+                        <br>
+                        ---A source of carbs (To help fuel the body for the session)
+                        <br>
+                        ---A source protein (Help avoid muscle breakdown and aid recovery after)
+                        <br>
+                        ---Low fat & fibre to allow quicker digestion.
+                        <br>
+                        -<strong>AFTER Training</strong>
+                        <br>
+                        -Again take on carbs and protein.
+                        <br>
+                        -<strong>VITAL</strong> that this is consumed within <strong>30 minutes</strong> of completeing the session.
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Protein as a Supplement</a>
+                    </h4>
+                </div>
+                <div id="collapse5" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Think its important to stress that supplements only account for 5% of nutritional value when it comes to recovery.
+                        <br>
+                        Although it's a easy way to get the required protein on board, I can't stress the importance of correct eating after exercise.
+                        <br>
+                        Here are some tips and advice on how to get the best from taking the supplement.
+                        <br>
+                        <br>
+                        <strong>1) Why do I need protein?</strong>
+                        <br>
+                        - On average, it comprises about 20% of your total body weight.
+                        <br>
+                        - Protein makes up part of the structure of every cell and tissue in your body (including internal organs, muscle tissue, tendons, skin, hair and nails)
+                        <br>
+                        <br>
+                        <strong>2) Do beginners need more protein than experiences athletes?</strong>
+                        <br>
+                        - Basically the answer is yes, beginners have slightly higher requirements for protein per kg body weight compared to experienced athletes
+                        <br>
+                        - When you begin a program your protein needs will rise due to the increase in protein turnover.
+                        <br>
+                        - After about 3 weeks of training, the body adapts to the exercise as the body becomes more efficient at recycling protein.
+                        <br>
+                        <br>
+                        <strong>3) Protein food vs Supplements.</strong>
+                        <br>
+                        - Food sources of protein, such as milk are just as effective
+                        <br>
+                        - A study with women found that drinking skimmed milk after resistance exercise for 12 weeks reduced body fat, increased lean mass and strength
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Recovery Tips</a>
+                    </h4>
+                </div>
+                <div id="collapse6" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Recovery is just as important as the actual exercise carried out.
+                        <br>
+                        It's vital that the body is given time to rest after exercise.
+                        <br>
+                        The following are simple aids that can speed up recovery and help reduce the soreness we feel after exercise.
+                        <br>
+                        <br>
+                        <strong>1) Get to a pool</strong>
+                        <br>
+                        Getting to a pool the day after a heavy session/match is brilliant for your recovery.
+                        <br>
+                        20/30 minutes in the pool will given nutrients to the muscles and, improve blood circulation.
+                        <br>
+                        <strong>2) Brisk walk</strong>
+                        <br>
+                        A simple 15/20 minute walk around the block post exercise will stop the muscles from stiffening up and
+                        <br>
+                        help to increase blood flow around the body.
+                        <br>
+                        <strong>3) Foam rolling</strong>
+                        <br>
+                        Foam rolling can help ease the pain, take out knots and essentially give you a deep tissue massage.
+                        <br>
+                        Think of it as ironing out a shirt with lots of creases.
+                        <br>
+                        <br>
+                        <strong>Advice</strong>
+                        <br>
+                        - If your main goal is to build muscle, allowing the body to deal with the pain will push the body to repair better.
+                        <br>
+                        -If your main goal is performance (GAA/soccer/Rugby player for example) and you train on the pitch 2/3 times a week,
+                        <br> play a match at the weekend and have 2/3 gym sessions a week.
+                        <br>
+                        I would use these methods a lot as your main priority is performance, injury prevention and maintenance.
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">Beginners Guide</a>
+                    </h4>
+                </div>
+                <div id="collapse7" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        These small details have large effects on our ability to perform and achieve.
+                        <br>
+                        <br>
+                        <strong>1) Sleep</strong>
+                        <br>
+                        - The aim is to get 6-8 sleep hours unbroken.
+                        <br>
+                        - An easy way of helping this is working backwards if you're up at 7.
+                        <br>
+                        You want to be going to sleep around 12. So 30 minutes before bed, put the phone down
+                        <br>
+                        (the light in our phones confuse our brains and signals the brain to stop releasing melatonin,
+                        <br>
+                        which is a hormone released when it's time to sleep).
+                        <br>
+                        - The ideal setting is a cool dark room with no light.
+                        <br>
+                        <br>
+                        <strong>2) Water</strong>
+                        <br>
+                        - 2-3 litres a day (an easy way is taking a sip every 15 minutes or so).
+                        <br>
+                        - Water carries nutrients to cells and carries waste from the cells.
+                        <br>
+                        - Helping to maintain temperature, improve cardiac output, improve endurance and even gives a less pronounced increase in our heart rate.
+                        <br>
+                        <br>
+                        <strong>3) Goals</strong>
+                        <br>
+                        - "The goal is to keep the goal the goal"- Dan Jon. So if your goal is to enjoy exercise, pick exercises you enjoy (classes, running, weight training).
+                        <br>
+                        - If you have more specific goals such as getting faster and being a better runner, don't waste time doing exercises that make you a 'better runner', get out there and run.
+                        <br>
+                        - If you want to get a heavier bench press, then bench more often.
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

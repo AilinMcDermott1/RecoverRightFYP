@@ -79,14 +79,26 @@
 </head>
 <body>
 
+<style>
+.container-fluid {
+padding-left: 16px;
+padding-right: 16px;
+}
+
+.nav.navbar-nav li a {
+    color: orange;
+}
+
+</style>
+
 <div class="container">
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" style="background-color: black">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">RecoverRight</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="{% url 'account:home' %}">Home</a></li>
                 <li><a href="{% url 'account:profile' %}">Profile</a></li>
                 <li><a href="{% url 'account:edit_profile' %}">Edit Profile</a></li>
                 <li><a href="{% url 'nutrition:nutrition' %}">Nutrition</a></li>
@@ -97,6 +109,7 @@
                         <li><a href="{% url 'goals:goal_list' %}">View Goals</a></li>
                     </ul>
                 </li>
+                <li><a href="{% url 'nutrition:meals' %}">Meal Plans</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'account:logout' %}">Log out</a></li>
@@ -112,5 +125,6 @@
     {% endblock %}
 
 
+</div>
 </body>
 </html>

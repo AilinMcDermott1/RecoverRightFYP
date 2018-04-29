@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    {% block body %}
+
+        <h2>Simple Meal Plans and Snack Options</h2>
+        <p> Below is a simple meal plan for the day before a game and for the day of a game. </p>
+        <p> The day before a big game/event is where you get all your fueling done.  </p>
+        <p> The calorie count for these meal are below them. You dont have to hit the calorie count exactly,
+        <br>
+        but you should be near enough to them.
+        <br>
+        All the meals are open to change. Just ensure you substitute in something of the same nutritional benefit.</p>
+
+
+        <br>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Meal Plan Day Before a Match</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        Ask any nutritionist and they'll tell you the same.
+                        <br>
+                        The day before a match/exercise, is where all your fueling and preparation are done.
+                        <br>
+                        Here I'll show you a simple meal plan for the day <strong>BEFORE</strong> a match.
+                        <br>
+                        <strong>Breakfast</strong>
+                        <br>
+                        - 1 bowl of Porridge: 100g.
+                        <br>
+                        - 1 small glass of orange juice: 200ml
+                        <br>
+                        - 1 small white roll (with jam ideally)
+                        <br>
+                        <strong>Snack 1</strong>
+                        <br>
+                        - 1 small pot of flavoured Muller Rice
+                        <br>
+                        - 1 pint of milk
+                        <br>
+                        - 1 medium banana.
+                        <br>
+                        <strong>Lunch</strong>
+                        <br>
+                        - 1 bag of Brown Rice: 250g.
+                        <br>
+                        - 1 Serving of vegetables.
+                        <br>
+                        - 1 breast of grilled chicken: 130g
+                        <br>
+                        - 1 small white roll.
+                        <br>
+                        - <strong>OPTIONAL</strong> 1 homemade protein shake (1 scope)
+                        <br>
+                        <strong>Snack 2</strong>
+                        <br>
+                        - 1 cereal Bar: 60g
+                        <br>
+                        - 1 glass of milk
+                        <br>
+                        <strong>Dinner</strong>
+                        <br>
+                        - 1 Serving of Potatoes: 250g.
+                        <br>
+                        - 1 breast of chicken (grilled/fillet): 130g
+                        <br>
+                        - Serving of Vegetables
+                        <br>
+                        - 1 side of rice pudding or custard.
+                        <br>
+                        <strong>Pre-Bed</strong>
+                        <br>
+                        - Cottage Cheese: 230g
+                        <br>
+                        - 1 wedge slice of Pineapple.
+                        <br>
+                        - Dark Cgocolate: 3 squares.
+                        <br>
+                        - 1 Slice of Brown/White Toast
+                        <br>
+                        <br>
+                        <strong>Total Calories: 2,765</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Meal Plan for Match Day</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        The day of match, it is vital to get a good breakfast on board.
+                        <br>
+                        Once a good breakfast is had, the rest of the day is just topping up the body for the game.
+                        <br>
+                        The following is a simple game day meal plan:
+                        <br>
+                        <br>
+                        <strong>Breakfast</strong>
+                        <br>
+                        - 1 bowl of porridge. 100-150g
+                        <br>
+                        - Natural yogurt with a serving of fruit.
+                        <br>
+                        - 1 glass of orange juice.
+                        <br>
+                        <br>
+                        <strong>Pre-Match Meal Option 1</strong>
+                        <br>
+                        - 2 medium sized eggs.
+                        <br>
+                        - 2 slices of brown bread.
+                        <br>
+                        - I glass of a fruit smoothie.
+                        <br>
+                        <strong>Total Calories: 843 (Breakfast included)</strong>
+                        <br>
+                        <br>
+                        <strong>Pre-Match Meal Option 2</strong>
+                        <br>
+                        - 1 Breast of chicken.
+                        <br>
+                        - 1 serving of vegetables.
+                        <br>
+                        - 1 glass of juice.
+                        <br>
+                        <strong>Total Calories: 760 (Breakfast included)</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Snack Options</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Below is a list of snacks that are ideal for general day/match day eating:
+                        <br>
+                        <br>
+                        - Fruit (Apples/Bananas/Oranges/Grapes/Pineapple)
+                        <br>
+                        - Natural Yougurt (Avoid flavoured unless it is greek style)
+                        <br>
+                        - Cereal bars.
+                        <br>
+                        - Protein Bars
+                        <br>
+                        - Mixed Nuts (peanuts, cashnuts and almonds)
+                        <br>
+                        - Dark Chocolate
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        </div>
+    {% endblock %}
+
+</body>
+</html>

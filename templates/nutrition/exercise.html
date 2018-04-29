@@ -3,7 +3,7 @@
 {% block body %}
     <div class="container">
 
-  <h2>Exercise API</h2>
+  <h2>Exercise Information Search</h2>
 
   <form action="" method="post">
       {% csrf_token %}
@@ -21,6 +21,7 @@
         <p>Exercise name:  {{ search_results2.user_input }}</p>
         <p>Exercise duration:  {{ search_results2.duration_min }}</p>
         <p>Calories burned:  {{ search_results2.nf_calories }}</p>
+{#        <p>Image:  {{ search_results2.photo }}</p>#}
 
     </div>
 {% endblock %}
