@@ -28,7 +28,7 @@ class RegisterUserForm(forms.ModelForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfileModel
-        fields = ('email', 'age', 'height', 'weight')
+        fields = ('email', 'age', 'height', 'weight', 'bio', 'image')
 
     def save(self, user=None):
         user_profile = super(UserProfileForm, self).save(commit=False)
@@ -47,58 +47,18 @@ class LoginForm(AuthenticationForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'input', 'placeholder': 'password'}))
 
 
-# class EditProfileForm(forms.ModelForm):
-#     template_name='/account/edit_profile'
-#
-#     class Meta:
-#         model = User
-#         fields = (
-#             'email',
-#             'first_name',
-#             'last_name',
-#             'password',
-#             'age',
-#             'weight',
-#             'height'
-#         )
-
 class UpdateProfile(forms.ModelForm):
-    # # username = forms.CharField(required=False)
-    # email = forms.EmailField(required=False)
-    # first_name = forms.CharField(required=False)
-    # last_name = forms.CharField(required=False)
-    # age = forms.IntegerField(required=False)
-    # height = forms.IntegerField(required=False)
-    # weight = forms.IntegerField(required=False)
 
     class Meta:
         model = UserProfileModel
-        fields = ('email', 'age', 'height', 'weight')
+        fields = ('email', 'age', 'height', 'weight', 'bio', 'image')
 
 
     # def clean_email(self):
     #     # username = self.cleaned_data.get('username')
     #     email = self.cleaned_data.get('email')
     #
-    #     # if email and User.objects.filter(email=email).count():
-    #     #     raise forms.ValidationError('This email address is already in use. Please supply a different email address.')
-    #     # return email
+    #     if email and User.objects.filter(email=email).count():
+    #         raise forms.ValidationError('This email address is already in use. Please supply a different email address.')
+    #     return email
 
-    # def save(self, commit=True):
-        # user = super(RegisterUserForm, self).save(commit=False)
-        # super().__init__(*args, **kwargs)
-        # super(UpdateProfile, self).__init__(commit)
-
-        # user.email = self.cleaned_data['email']
-
-        # if commit:
-        #     user.save()
-        #
-        # return user
-
-    # def save(self, user=None):
-    #     user_profile = super(UserProfileForm, self).save(commit=False)
-    #     if user:
-    #         user_profile.user = user
-    #     user_profile.save()
-    #     return user_profile

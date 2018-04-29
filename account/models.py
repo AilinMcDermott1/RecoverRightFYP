@@ -13,6 +13,8 @@ class UserProfileModel(models.Model):
     email = models.EmailField(max_length=254, null=True, blank=True, unique=True)
     height = models.PositiveIntegerField(blank=True, null=True)
     weight = models.PositiveIntegerField(blank=True, null=True)
+    bio = models.TextField(max_length=100, blank=True, default='')
+    image = models.ImageField(upload_to='profile_image', blank=True, null=True)
 
     def __str__(self):
         return self.user.username

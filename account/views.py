@@ -30,22 +30,11 @@ class RegisterUserView(CreateView):
         user = form.save(commit=False)
         user.set_password(form.cleaned_data['password'])
         user.save()
-        # UserProfileModel.objects.create(user=user)
+        UserProfileModel.objects.create(user=user)
         login(self.request, user)
 
 
-        return HttpResponseRedirect(reverse('account:profile'))
-
-        # profile = form.save(commit=False)
-        # username = form.cleaned_data['username']
-        # password = form.cleaned_data['password']
-        # user = User.objects.create_user(username=username, password=password)
-        # profile.user = user
-        # profile.save()
-        # UserProfileModel.objects.create(user=user)
-        #
-        # return HttpResponseRedirect(reverse('account:profile'))
-
+        return HttpResponseRedirect(reverse('account:home'))
 
 
 class LoginUserView(LoginView):
@@ -59,64 +48,25 @@ def profile(request):
     args = {"user": request.user}
     return render(request, 'account/profile.html', args)
 
+def home(request):
+    args = {"user": request.user}
+    return render(request, 'account/home.html', args)
 
-# def edit_profile(request):
-#     if request.method == 'POST':
-#         form = UserChangeForm(request.POST, instance=request.user)
-#
-#         if form.is_valid():
-#             form.save()
-#             return redirect(reverse('account:profile'))
-#     else:
-#         form = UserChangeForm(instance=request.user)
-#         args = {'form': form}
-#         return render(request, 'account/edit_profile.html', args)
 
 def update_profile(request):
     args = {}
 
     if request.method == 'POST':
-        form = UpdateProfile(request.POST, instance=request.user)
+        form = UpdateProfile(request.POST, request.FILES, instance=request.user.userprofilemodel)
         if form.is_valid():
             form.save()
-            # return HttpResponseRedirect(reverse('account:profile'))
-            return render(request, 'account/profile.html')
+            return HttpResponseRedirect(reverse('account:profile'))
+            # return render(request, 'account/profile.html')
     else:
         form = UpdateProfile()
         if request.user.is_authenticated():
-            form = UpdateProfile(instance=request.user)
+            form = UpdateProfile(instance=request.user.userprofilemodel)
         args['form'] = form
         return render(request, 'account/edit_profile.html', args)
+        # return HttpResponseRedirect(reverse('account:profile'))
 
-# class EditUserProfileView(UpdateView): #Note that we are using UpdateView and not FormView
-#     model = UserProfileModel
-#     form_class = UserProfileForm
-#     template_name = "account/profile.html"
-#
-#     def get_object(self, *args, **kwargs):
-#         user = get_object_or_404(User, pk=self.kwargs['username'])
-#
-#         # We can also get user object using self.request.user  but that doesnt work
-#         # for other models.
-#
-#         return user.userprofilemodel
-#
-#     def get_success_url(self, *args, **kwargs):
-#         return reverse("account/edit_profile.html")
-
-# class UserEditProfileView(LoginRequiredMixin,UpdateView):
-#     login_url = '/'
-#     model = UserProfileModel
-#     fields = [
-#         'first_name',
-#         'last_name',
-#         'email',
-#         'age',
-#         'height',
-#         'weight',
-#         ]
-#     template_name_suffix = 'account:edit_profile.html'
-#
-#     def get_success_url(self):
-#         userid = self.kwargs['pk']
-#         return reverse_lazy('account:profile.html', kwargs={'pk': userid})
